@@ -22,6 +22,6 @@ Cloudflare-DDNS is a dynamic DNS client to automatically update Cloudflare's DNS
 
     `nano cloudflare-ddns.sh`
 
-    ![Global variables](https://raw.githubusercontent.com/nathanlytang/Cloudflare-DDNS/master/images/global_variables.png "Global variables")
-   
+    ![Global variables]( https://github.com/nathanlytang/Cloudflare-DDNS/blob/master/images/global_variables.png "Global variables")
+
 
