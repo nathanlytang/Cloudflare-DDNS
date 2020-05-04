@@ -4,19 +4,20 @@
 auth_email= # Insert cloudflare account email here
 cf_api_key= # Insert global API key here
 zone_id= # Insert zone ID here
+ip_record_loc="/tmp/ip-record" # Location of ip records file
+dns_entries_loc="$PWD/dns-entries" # Location of dns entries file
 
 # Get the current IP address
 current_ip=$(curl --silent https://api.ipify.org) || exit 1
 
 # Check if IP Record file exists
-ip_record_loc="/tmp/ip-record"
 if [ ! -f "$ip_record_loc" ]; then
-    > /tmp/ip-record
+    > $ip_record_loc
 fi
 
 # Check if dns-entries exists and empty
-[ ! -f "$PWD/dns-entries" ] && > dns-entries
-[ ! -s "$PWD/dns-entries" ] && exit 0
+[ ! -f "$dns_entries_loc" ] && > $dns_entries_loc
+[ ! -s "$dns_entries_loc" ] && exit 0
 
 # Get the last recorded IP address
 recorded_ip=`cat $ip_record_loc`
@@ -48,4 +49,4 @@ EOF
         -H "X-Auth-Email: $auth_email" \
         -H "X-Auth-Key: $cf_api_key" \
         -d "$record"
-done < dns-entries
+done < $dns_entries_loc
