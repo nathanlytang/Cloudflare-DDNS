@@ -14,9 +14,9 @@ if [ ! -f "$ip_record_loc" ]; then
     > /tmp/ip-record
 fi
 
-# Check if ddns-entries exists and empty
-[ ! -f "$PWD/ddns-entries" ] && > ddns-entries
-[ ! -s "$PWD/ddns-entries" ] && exit 0
+# Check if dns-entries exists and empty
+[ ! -f "$PWD/dns-entries" ] && > dns-entries
+[ ! -s "$PWD/dns-entries" ] && exit 0
 
 # Get the last recorded IP address
 recorded_ip=`cat $ip_record_loc`
@@ -48,4 +48,4 @@ EOF
         -H "X-Auth-Email: $auth_email" \
         -H "X-Auth-Key: $cf_api_key" \
         -d "$record"
-done < ddns-entries
+done < dns-entries
