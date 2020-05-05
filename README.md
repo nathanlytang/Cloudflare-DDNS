@@ -49,9 +49,9 @@ Cloudflare-DDNS is a dynamic DNS client to automatically update Cloudflare's DNS
     Eg.
     > A-record-name A-record-ID TTL Proxied
     > ```
-    www abcdefghijklmnopqrstuvwxyz 300 true
-    root 1234567890abcdefghijklmnop 180 false
-
+    > www abcdefghijklmnopqrstuvwxyz 300 true
+    > root 1234567890abcdefghijklmnop 180 false
+	> ```
 
 6.  Set up the client to run automatically with cron.
     `
