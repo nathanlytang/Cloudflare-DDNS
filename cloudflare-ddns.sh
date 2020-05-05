@@ -1,11 +1,11 @@
 #!/bin/bash
 
 # Global Variables
-auth_email= # Insert cloudflare account email here
+auth_email= # Insert Cloudflare account email here
 cf_api_key= # Insert global API key here
 zone_id= # Insert zone ID here
 ip_record_loc="/tmp/ip-record" # Location of ip records file
-dns_entries_loc="$PWD/dns-entries" # Location of dns entries file
+dns_entries_loc="/srv/cloudflare-ddns/dns-entries" # Location of dns entries file
 
 # Get the current IP address
 current_ip=$(curl --silent https://api.ipify.org) || exit 1
@@ -43,7 +43,7 @@ do
         "proxied": $proxied }
 EOF
     )
-    curl "https://api.cloudflare.com/client/v4/zones/$zone_id/dns_records/$a_record_id" \
+    curl --silent "https://api.cloudflare.com/client/v4/zones/$zone_id/dns_records/$a_record_id" \
         -X PUT \
         -H "Content-Type: application/json" \
         -H "X-Auth-Email: $auth_email" \
