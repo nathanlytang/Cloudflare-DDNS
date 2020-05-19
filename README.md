@@ -1,3 +1,13 @@
+<p align="center">
+    <a href="https://github.com/nathanlytang/cloudflare-ddns" alt="Repo Size">
+        <img src="https://img.shields.io/github/repo-size/nathanlytang/cloudflare-ddns" /></a>
+    <a href="https://github.com/nathanlytang/cloudflare-ddns" alt="License">
+        <img src="https://img.shields.io/github/license/nathanlytang/cloudflare-ddns" /></a>
+    <a href="https://github.com/nathanlytang/cloudflare-ddns" alt="Language">
+        <img src="https://img.shields.io/github/languages/top/nathanlytang/cloudflare-ddns">    
+</p>
+
+
 # Cloudflare-DDNS
 
 Cloudflare-DDNS is a dynamic DNS client to automatically update Cloudflare's DNS service as your public IP address changes using Cloudflare's API v4 -- no need for a third party dynamic DNS service.  The client will run in most shells, and is best suited to run as a cron job.
