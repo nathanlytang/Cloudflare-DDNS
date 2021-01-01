@@ -75,7 +75,7 @@ Cloudflare-DDNS is a dynamic DNS client to automatically update Cloudflare's DNS
 
 ## Multiple Domains
 
-Use `cloudflare-multi-ddns.sh`.  Rather than having the authentication email, API key, and zone id specified by the script, they are store in the `dns-entries` file.
+Use `cloudflare-multi-ddns.sh`.  Rather than having the authentication email, API key, and zone id specified by the script, they are stored in the `dns-entries` file.
 Your `dns-entries` file will look like this:
     * In each entry, list the Auth_email, api_key, zone_id, A-Record Name, A-Record ID, TTL, and Proxied, each separated by a single space.
 
