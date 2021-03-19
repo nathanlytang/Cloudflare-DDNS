@@ -4,7 +4,7 @@
     <a href="https://github.com/nathanlytang/cloudflare-ddns" alt="License">
         <img src="https://img.shields.io/github/license/nathanlytang/cloudflare-ddns" /></a>
     <a href="https://github.com/nathanlytang/cloudflare-ddns" alt="Language">
-        <img src="https://img.shields.io/github/languages/top/nathanlytang/cloudflare-ddns">    
+	<img src="https://img.shields.io/github/languages/top/nathanlytang/cloudflare-ddns" /></a>
 </p>
 
 
