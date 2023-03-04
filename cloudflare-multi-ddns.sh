@@ -30,7 +30,7 @@ echo "IP changed to $current_ip"
 
 # Update all entries on Cloudflare
 IFS=' '
-while read auth_email cf_api_key zone_id a_record_name a_record_id ttl proxied
+while read cf_api_token zone_id a_record_name a_record_id ttl proxied
 do
         record=$(cat << EOF
     { "type": "A",
@@ -43,7 +43,6 @@ EOF
     curl --silent "https://api.cloudflare.com/client/v4/zones/$zone_id/dns_records/$a_record_id" \
         -X PUT \
         -H "Content-Type: application/json" \
-        -H "X-Auth-Email: $auth_email" \
-        -H "X-Auth-Key: $cf_api_key" \
+        -H "Authorization: Bearer $cf_api_token" \
         -d "$record"
 done < $dns_entries_loc
