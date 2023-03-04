@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Global Variables
-cf_api_token= # Insert global API key here
+cf_api_token= # Insert API token here
 zone_id= # Insert zone ID here
 ip_record_loc="/tmp/ip-record" # Location of ip records file
 dns_entries_loc="/srv/cloudflare-ddns/dns-entries" # Location of dns entries file
