@@ -1,8 +1,7 @@
 #!/bin/bash
 
 # Global Variables
-auth_email= # Insert Cloudflare account email here
-cf_api_key= # Insert global API key here
+cf_api_token= # Insert global API key here
 zone_id= # Insert zone ID here
 ip_record_loc="/tmp/ip-record" # Location of ip records file
 dns_entries_loc="/srv/cloudflare-ddns/dns-entries" # Location of dns entries file
@@ -46,7 +45,6 @@ EOF
     curl --silent "https://api.cloudflare.com/client/v4/zones/$zone_id/dns_records/$a_record_id" \
         -X PUT \
         -H "Content-Type: application/json" \
-        -H "X-Auth-Email: $auth_email" \
-        -H "X-Auth-Key: $cf_api_key" \
+        -H "Authorization: Bearer $cf_api_token" \
         -d "$record"
 done < $dns_entries_loc
