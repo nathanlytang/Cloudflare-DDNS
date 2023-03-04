@@ -17,6 +17,10 @@ Cloudflare-DDNS is a dynamic DNS client to automatically update Cloudflare's DNS
 * Easy entry management.  All your records are placed in one file, making it easy to see what is being updated.
 * Update multiple records at once.  By placing all your records in one file, you only have to run the service once to update all your entries.
 
+## API Token
+You can create an API token here under your [Profile/Api tokens](https://dash.cloudflare.com/profile/api-tokens).
+It's recommended to use the "Edit zone DNS" template.
+
 ## Setup
 
 1. Install the script
