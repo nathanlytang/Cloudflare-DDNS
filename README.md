@@ -35,8 +35,7 @@ Cloudflare-DDNS is a dynamic DNS client to automatically update Cloudflare's DNS
 
     ```bash
     # Global Variables
-    auth_email= # Insert Cloudflare account email here
-    cf_api_key= # Insert global API key here
+    cf_api_token= # Insert API token here
     zone_id= # Insert zone ID here
     ip_record_loc="/tmp/ip-record" # Location of ip records file
     dns_entries_loc="/srv/cloudflare-ddns/dns-entries" # Location of dns entries file
@@ -49,7 +48,7 @@ Cloudflare-DDNS is a dynamic DNS client to automatically update Cloudflare's DNS
 4.  Get your A-record ID's
     * Use your zone ID, Cloudflare account email, and account API key
     `
-    curl -X GET "https://api.cloudflare.com/client/v4/zones/** ZONE ID **/dns_records?type=A" -H "X-Auth-Email: ** Cloudflare account email **" -H "X-Auth-Key: ** API KEY **" -H "Content-Type: application/json"
+    curl -X GET "https://api.cloudflare.com/client/v4/zones/** ZONE ID **/dns_records?type=A" -H "Authorization: Bearer ** API Token **" -H "Content-Type: application/json"
     `
 
 
@@ -77,14 +76,14 @@ Cloudflare-DDNS is a dynamic DNS client to automatically update Cloudflare's DNS
 
 Use `cloudflare-multi-ddns.sh`.  Rather than having the authentication email, API key, and zone id specified by the script, they are stored in the `dns-entries` file.
 Your `dns-entries` file will look like this:
-    * In each entry, list the Auth_email, api_key, zone_id, A-Record Name, A-Record ID, TTL, and Proxied, each separated by a single space.
+    * In each entry, list the api_token, zone_id, A-Record Name, A-Record ID, TTL, and Proxied, each separated by a single space.
 
 Eg.
 > Auth_email Api_key Zone_id A-record-name A-record-ID TTL Proxied
 > ```
-> example@email.com cf_api_key_here zone_id_here www a_record_id_here 300 true
-> differentemail@email.com different_cf_api_key_here different_zone_id_here @ a_record_id_here 180 false
+> cf_api_key_here zone_id_here www a_record_id_here 300 true
+> different_cf_api_key_here different_zone_id_here @ a_record_id_here 180 false
 > ```
 
 ## Notes
-* Do not share your API key.  Anyone who has it can make changes to your account.
+* Do not share your API token(s).  Anyone who has it can make changes to your account.
